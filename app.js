@@ -1,8 +1,20 @@
-var questions = [
-  ['How old is Homer?', 38],
-  ['Homer lives at ___ Evergreen Terrace?', 742],
-  ['Homer works in sector ___G?', 7],
-  ['How many kids does Homer Have?', 3]
+var quiz = [
+  {
+    question: 'How old is Homer?', 
+    answer: 38
+  },
+    {
+    question: 'Homer lives at ___ Evergreen Terrace?', 
+    answer: 742
+  },
+    {
+    question: 'Homer works in sector ___G?', 
+    answer: 7
+  },
+    {
+    question: 'How many kids does Homer Have?', 
+    answer: 3
+  }
 ];
 
 var correct = 0;
@@ -22,9 +34,9 @@ function buildList(array) {
 		return listHTML;
 }
 
-for (var i = 0; i < questions.length; i += 1){
-  var question = questions[i][0];
-  var answer = questions[i][1];
+for (var i = 0; i < quiz.length; i += 1){
+  var question = quiz[i].question;
+  var answer = quiz[i].answer;
   var response = parseInt(prompt(question));
   if (response === answer) {
   	correct += 1;
@@ -34,7 +46,7 @@ for (var i = 0; i < questions.length; i += 1){
   }
 }
 
-var html = "You got " + correct + "out of 4 right";
+var html = "You got " + correct + " out of 4 right";
 html += '<h2>You got these ones right!</h2>';
 html += buildList(right);
 html += '<h2>You got these ones wrong...</h2>';
